@@ -32,12 +32,12 @@ export default function AboutPage() {
             <div className="prose prose-gray dark:prose-invert">
               <h2 className="font-semibold mb-4">My Journey</h2>
               <p className=" text-sm">
-                I'm a passionate developer with a keen eye for creating elegant solutions to complex problems. 
+                I&apos;m a passionate developer with a keen eye for creating elegant solutions to complex problems. 
                 My journey in technology began [Your Story Here]. I specialize in building modern web applications 
                 and am constantly exploring new technologies and methodologies.
               </p>
               <p className=" mt-4 text-sm">
-                When I'm not coding, you can find me [Your Interests/Hobbies]. I believe in continuous learning 
+                When I&apos;m not coding, you can find me [Your Interests/Hobbies]. I believe in continuous learning 
                 and staying up-to-date with the latest industry trends and best practices.
               </p>
             </div>

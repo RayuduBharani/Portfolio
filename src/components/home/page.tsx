@@ -52,7 +52,7 @@ export default function HomePage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className='text-4xl from-primary/100 to-muted bg-gradient-to-r bg-clip-text text-transparent font-bold max-w-3xl text-center max-sm:text-2xl'>
-        Hi, I'm Bharani — I don't just write code I craft digital experiences.
+        Hi, I&apos;m Bharani — I don&apos;t just write code I craft digital experiences.
       </motion.p>
       <motion.p
         initial={{ opacity: 0, y: 20 }}

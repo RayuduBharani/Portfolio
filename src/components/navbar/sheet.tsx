@@ -1,10 +1,8 @@
 import React from 'react'
 import {
     Drawer,
-    DrawerClose,
     DrawerContent,
     DrawerDescription,
-    DrawerFooter,
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
@@ -13,13 +11,9 @@ import { Button } from '../ui/button'
 import { Menu } from 'lucide-react'
 import {
     NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 import { items } from '@/lib/utils'
 import Link from 'next/link'
