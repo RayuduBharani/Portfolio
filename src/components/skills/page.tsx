@@ -52,7 +52,7 @@ export default function SkillsPage() {
     }
   ]
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center gap-14'>
+    <div className='w-full h-full flex flex-col items-center justify-center gap-14 px-2'>
       <div>
         <p className='text-xl text-primary font-bold text-center'>Skills &amp; Tecnologies</p>
         <p className='mt-1 text-sm'>Showcasing My Expertise And Technical Proficiencies</p>

@@ -65,7 +65,6 @@ export function ContainerTextFlip({
       )}
       key={words[currentWordIndex]}
     >
-      <div className='w-2 h-2 absolute top-0 left-0 rounded-full bg-foreground'></div>
       <motion.div
         transition={{
           duration: animationDuration / 1000,

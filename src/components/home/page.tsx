@@ -41,12 +41,13 @@ export default function HomePage() {
   ]
   return (
     <div className='w-full h-full flex flex-col items-center justify-center gap-5'>
+      <Link href="#contact">
       <ContainerTextFlip
         animationDuration={700}
         className='cursor-pointer relative bg-primary/10 text-black dark:text-white dark:bg-primary/10 border-[0.1px] dark:border-yellow-600 shadow-sm '
         words={["open to work", "available for hire" , "let's connect", "let's collaborate" , "for freelance work"]}
         interval={3000}
-      />
+      /></Link>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
