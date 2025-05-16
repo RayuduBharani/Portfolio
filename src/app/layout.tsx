@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Poppins } from "next/font/google";
+import Navbar from "@/components/navbar/navbar";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -21,9 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.className} antialiased`}
+        className={`${poppins.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
