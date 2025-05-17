@@ -12,15 +12,19 @@ export const items = [
     description: "Learn more about me and my background.",
   },
   {
+    title: "Skills",
+    href: "#skills",
+    description: "Explore my technical skills and expertise.",
+  },
+  {
     title: "Projects",
     href: "#projects",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
-    title: "Skills",
-    href: "#skills",
-    description: "Explore my technical skills and expertise.",
+    title : "Services" ,
+    href : "#services"
   },
   {
     title: "Contact Me",

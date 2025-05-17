@@ -31,7 +31,7 @@ export default function HomePage() {
     {
       name: "Instagram",
       icon: <Instagram />,
-      href: "https://www.instagram.com/rayudu_bharani/"
+      href: "https://www.instagram.com/bharani_rayudu/"
     },
     {
       name: "WhatsApp",
@@ -42,12 +42,12 @@ export default function HomePage() {
   return (
     <div className='w-full h-full flex flex-col items-center justify-center gap-5'>
       <Link href="#contact">
-      <ContainerTextFlip
-        animationDuration={700}
-        className='cursor-pointer relative bg-primary/10 text-black dark:text-white dark:bg-primary/10 border-[0.1px] dark:border-yellow-600 shadow-sm '
-        words={["open to work", "available for hire" , "let's connect", "let's collaborate" , "for freelance work"]}
-        interval={3000}
-      /></Link>
+        <ContainerTextFlip
+          animationDuration={700}
+          className='cursor-pointer relative bg-primary/10 text-black dark:text-white dark:bg-primary/10 border-[0.1px] dark:border-yellow-600 shadow-sm '
+          words={["open to work", "available for hire", "let's connect", "let's collaborate", "for freelance work"]}
+          interval={3000}
+        /></Link>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,18 @@ export default function HomePage() {
           ))
         }
       </motion.div>
-
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "anticipate" }}
+        className='flex gap-5 md:hidden'>
+        <Button asChild variant="default">
+          <Link href="#">Resume</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href="#projects">My Work</Link>
+        </Button>
+      </motion.div>
     </div>
   )
 }

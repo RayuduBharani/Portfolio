@@ -9,40 +9,40 @@ const projects = [
     description: "Smart preparation platform with AI-powered learning tools",
     tech: ["Next.js", "TypeScript", "Tailwind", "PostgreSQL"],
     image: "/Prepflow.png",
-    github: "https://github.com/yourusername/prepflow",
-    demo: "https://prepflow.demo"
+    github: "https://github.com/RayuduBharani/prepflow",
+    demo: "https://prepflow.vercel.app"
   },
   {
     title: "Course Management System",
     description: "Comprehensive course management system for educators",
     tech: ["React", "MongoDB" , "Express.js" , "Node.js"],
-    image: "/Prepflow.png",
-    github: "https://github.com/yourusername/rentbase",
-    demo: "https://rentbase.demo"
+    image: "/CMS.png",
+    github: "https://github.com/RayuduBharani/Course_management_system",
+    demo: "https://cms-bharani.vercel.app"
   },
   {
     title: "Songs downloader",
     description: "A simple and efficient songs downloader",
     tech: ["React", "Node.js" , "Express.js", "Yt-search npm"],
-    image: "/Prepflow.png",
-    github: "https://github.com/yourusername/windowapp",
-    demo: "https://windowapp.demo"
+    image: "/ytsongs.png",
+    github: "https://github.com/RayuduBharani/YT_Songs_Download_Frontend",
+    demo: "https://yt-songs-download.vercel.app/"
   },
    {
     title: "Youtube review website",
     description: "It is Freelance project for Telugu techpod Youtube channel",
     tech: ["Next.js", "TypeScript", "Tailwind"],
-    image: "/Prepflow.png",
-    github: "https://github.com/yourusername/prepflow",
-    demo: "https://prepflow.demo"
+    image: "/ytReview.png",
+    github: "https://github.com/RayuduBharani/YT_Reviews",
+    demo: "https://telugu-techpad.vercel.app/"
   },
   {
     title: "Simple Blog website",
     description: "A simple blog website with a clean design",
     tech: ["React.js", "Node.js", "MongoDB"],
-    image: "/Prepflow.png",
-    github: "https://github.com/yourusername/rentbase",
-    demo: "https://rentbase.demo"
+    image: "/blog.png",
+    github: "https://github.com/RayuduBharani/Next_Blog",
+    demo: "https://bharani-blog.vercel.app/"
   }
 ]
 
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
               key={index}
               className='group rounded-xl border bg-background overflow-hidden'
             >
-              <div className='w-full h-48 overflow-hidden bg-muted'>
+              <div className='w-full h-48 overflow-hidden bg-muted border-2'>
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -74,7 +74,7 @@ export default function ProjectsPage() {
                 />
               </div>
 
-              <div className='p-4 space-y-3'>
+              <div className='p-4 space-y-2'>
                 <h3 className='text-lg font-semibold text-foreground line-clamp-1'>{project.title}</h3>
                 <p className='text-muted-foreground text-sm line-clamp-2'>{project.description}</p>
                 

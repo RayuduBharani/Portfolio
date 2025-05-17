@@ -16,7 +16,7 @@ export default function Navbar() {
         <div className='w-full h-[4.5rem] bg-background flex items-center justify-between max-sm:px-2 sm:px-8 fixed'>
             <div className='w-[30%] h-full flex items-center justify-start'>
                 <p className='hidden sm:block font-bold text-xl text-primary'><Link href={"#home"}>Bharani <span className='hidden md:inline'>Rayudu</span></Link></p>
-                <img src="RB_1.png" className='w-9 h-9 max-sm:inline hidden' alt="" />
+                <Link href={"#home"}><img src="RB_1.png" className='w-9 h-9 max-sm:inline hidden' alt="" /></Link>
             </div>
             <div className='w-[70%] h-full justify-end hidden md:flex'>
                 <NavigationMenu>
