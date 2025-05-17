@@ -16,7 +16,7 @@ export default function SkillsPage() {
     },
     {
       name: "JavaScript",
-      icon: "/JS.png"
+      icon: "/js.png"
     },
     {
       name: "TypeScript",
