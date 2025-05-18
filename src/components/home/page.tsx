@@ -39,8 +39,25 @@ export default function HomePage() {
       href: "https://wa.me/7075923575"
     }
   ]
+    const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  }
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  }
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center gap-5'>
+    <div className='w-full h-full flex flex-col items-center justify-center gap-5 max-sm:px-0.5'>
       <Link href="#contact">
         <ContainerTextFlip
           animationDuration={700}
@@ -50,44 +67,48 @@ export default function HomePage() {
         /></Link>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
         className='text-4xl from-primary/100 to-muted bg-gradient-to-r bg-clip-text text-transparent font-bold max-w-3xl text-center max-sm:text-2xl'>
         Hi, I&apos;m Bharani — I don&apos;t just write code I craft digital experiences.
       </motion.p>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
+        viewport={{ once: true }}
         className='max-w-xl text-center text-muted-foreground max-sm:max-w-md max-sm:text-sm'>
-        Full-stack developer focused on React.js, Next.js, TypeScript, and scalable systems &amp; Problem Solver.
+        <span className='text-foreground font-semibold'>Full-stack developer</span> focused on <span className='text-foreground font-semibold'>MERN</span> Stack, <span className='text-foreground font-semibold'>Next.js</span>, TypeScript, and scalable systems &amp; <span className='text-foreground font-semibold'>Problem Solver</span>.
       </motion.p>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "anticipate" }}
-        className='flex gap-5'>
-        {
-          socials.map((social, id) => (
+   <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex gap-5"
+      >
+        {socials.map((social, id) => (
+          <motion.div key={id} variants={item}>
             <Button
-              key={id}
               asChild
               size="icon"
               variant="outline"
-              className="transition-all duration-200 hover:scale-110 hover:border-primary hover:bg-primary/10"
+              className="transition-all duration-200 hover:scale-110 hover:border-primary hover:bg-primary/10 dark:hover:bg-primary/10 dark:hover:border-primary"
             >
-              <Link href={social.href} target="_blank" rel="noopener noreferrer" className='cursor-pointer'>
+              <Link href={social.href} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
                 {social.icon}
               </Link>
             </Button>
-          ))
-        }
+          </motion.div>
+        ))}
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "anticipate" }}
+        viewport={{ once: true }}
         className='flex gap-5 md:hidden'>
         <Button asChild variant="default">
           <Link href="https://drive.google.com/file/d/1SlEIWPh4ayZFgCoaVHm45jigzBo2YaOi/view?usp=sharing">Resume</Link>

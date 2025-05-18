@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} antialiased`}
+        className={`${poppins.variable} antialiased w-full h-dvh`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />

@@ -1,4 +1,6 @@
+"use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { motion } from "framer-motion"
 
 export default function ServicesPage() {
     const services = [
@@ -29,27 +31,65 @@ export default function ServicesPage() {
         }
     ]
 
+    const container = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    }
+
+    const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1
+        }
+    }
+
     return (
         <div className="container mx-auto py-16 px-4 max-w-4xl">
-            <div className="text-center mb-12">
-                <h1 className="text-xl text-primary font-bold mb-2">What I Can Do For You</h1>
+            <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 , delay: 0.2 }}
+                className="text-center mb-12"
+            >
+                <h1 className="text-xl text-primary font-bold mb-2 relative inline-block
+                    after:content-[''] after:absolute after:left-1/2 after:bottom-0
+                    after:-translate-x-1/2 after:h-[3px] after:w-[50%] after:bg-foreground after:rounded-lg
+                    after:transition-all after:duration-500 hover:after:w-full">What I Can Do For You</h1>
                 <p className="text-muted-foreground mx-auto">
                     Delivering high-quality web development solutions tailored to your needs
                 </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </motion.div>
+            <motion.div 
+                variants={container}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            >
                 {services.map((service, index) => (
-                    <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
-                        <CardHeader>
-                            <div className="text-4xl mb-4">{service.icon}</div>
-                            <CardTitle>{service.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <CardDescription>{service.description}</CardDescription>
-                        </CardContent>
-                    </Card>
+                    <motion.div
+                        key={index}
+                        variants={item}
+                    >
+                        <Card className="hover:shadow-lg transition-shadow duration-300">
+                            <CardHeader>
+                                <div className="text-4xl mb-4">{service.icon}</div>
+                                <CardTitle>{service.title}</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <CardDescription>{service.description}</CardDescription>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     )
 }

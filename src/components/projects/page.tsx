@@ -1,7 +1,9 @@
+"use client"
 import React from 'react'
 import { Button } from '../ui/button'
 import Github from '../icons/Github'
 import Image from 'next/image'
+import { motion } from "framer-motion"
 
 const projects = [
   {
@@ -47,21 +49,58 @@ const projects = [
 ]
 
 export default function ProjectsPage() {
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  }
+
   return (
-    <section className='w-full min-h-screen py-8 px-2 pt-24'>
+    <section className='w-full min-h-screen py-8 max-sm:px-4 pt-24'>
       <div className='max-w-4xl mx-auto space-y-8'>
-        <div className='space-y-2'>
-          <h1 className='text-[1.3rem] font-bold text-primary text-center'>Projects</h1>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 , delay: 0.5 }}
+          className='space-y-2 flex flex-col items-center'
+        >
+          <p className='text-[1.3rem] font-bold text-primary text-center relative inline-block
+          after:content-[""] after:absolute after:left-1/2 after:bottom-0
+          after:-translate-x-1/2 after:h-[3px] after:w-[50%] after:bg-foreground after:rounded-lg
+          after:transition-all after:duration-500 hover:after:w-full'>Projects</p>
           <p className='text-md text-muted-foreground text-center max-w-2xl mx-auto'>
             Here are some of my featured projects that showcase my skills and experience
           </p>
-        </div>
+        </motion.div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center'>
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center'
+        >
           {projects.map((project, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className='group rounded-xl border bg-background overflow-hidden'
+              variants={item}
+              className='group rounded-xl border bg-background overflow-hidden w-full'
             >
               <div className='w-full h-48 overflow-hidden bg-muted border-2'>
                 <Image
@@ -103,9 +142,9 @@ export default function ProjectsPage() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
