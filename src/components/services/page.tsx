@@ -10,23 +10,13 @@ export default function ServicesPage() {
             icon: "🌐"
         },
         {
-            title: "Frontend Development",
-            description: "Specializing in building modern UIs using Next.js , React.js and Tailwind CSS. Focusing on clean design, performance, and responsiveness across devices.",
-            icon: "⚛️"
-        },
-        {
-            title: "Backend/API Development",
-            description: "Building RESTful APIs and integrating authentication, authorization, and databases using Node.js, Express, Prisma, and MongoDB/PostgreSQL.",
-            icon: "🔧"
-        },
-        {
             title: "Freelance Website Projects",
-            description: "Creating custom personal, business, or portfolio websites that match your brand and work across all devices.",
+            description: "Creating custom personal, business, or portfolio websites that match your brand and work across all devices. I can also help you with your existing website if you need a redesign or a new feature.",
             icon: "💼"
         },
         {
             title: "Technical Consultation & Debugging",
-            description: "Helping you plan, debug, or set up your tech stack when you're stuck on a bug or don't know how to start your project.",
+            description: "Helping you plan, debug, or set up your tech stack when you're stuck on a bug or don't know how to start your project. I can also help you with your existing website .",
             icon: "🔍"
         }
     ]

@@ -45,6 +45,14 @@ const projects = [
     image: "/blog.png",
     github: "https://github.com/RayuduBharani/Next_Blog",
     demo: "https://bharani-blog.vercel.app/"
+  },
+  {
+    title : "HireQuest" ,
+    description : "A platform to connect job seekers and employers" ,
+    tech : ["Next.js" , "TypeScript" , "Tailwind CSS" , "MongoDB"],
+    image : "/Hirequest.png" ,
+    github : "https://github.com/RayuduBharani/HireQuest_Portel",
+    demo : "https://hirequest-six.vercel.app/"
   }
 ]
 

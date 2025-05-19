@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased w-full h-dvh`}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
           {children}
         </ThemeProvider>
