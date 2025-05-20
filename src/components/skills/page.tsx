@@ -86,7 +86,7 @@ export default function SkillsPage() {
           after:content-[''] after:absolute after:left-1/2 after:bottom-0
           after:-translate-x-1/2 after:h-[3px] after:w-[65%] after:bg-foreground after:rounded-lg
           after:transition-all after:duration-500 hover:after:w-full">Skills &amp; Tecnologies</p>
-        <p className='mt-1 text-sm'>Showcasing My Expertise And Technical Proficiencies</p>
+        <p className='mt-1 text-sm text-center'>Showcasing My Expertise And Technical Proficiencies</p>
       </motion.div>
 
       <div className='w-full h flex items-center justify-center'>

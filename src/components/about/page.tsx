@@ -32,10 +32,13 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6 h-fit"
-          >
-            <div className="rounded-full bg-muted overflow-hidden shadow-lg mx-auto w-[22rem] h-[22rem]">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5">
-                <img src="https://media.licdn.com/dms/image/v2/D5635AQF0gv8e5YVacA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1736394263992?e=1748268000&v=beta&t=OJ11PpAKTE5Naps2z1wkjoFzqz-0QzT_vH1IkCkOpyA" alt="" />
+          >            <div className="rounded-full bg-muted overflow-hidden shadow-lg mx-auto w-[16rem] sm:w-[18rem] md:w-[20rem] lg:w-[22rem]">
+              <div className="aspect-square w-full bg-gradient-to-br from-primary/20 to-primary/5">
+                <img 
+                  src="https://media.licdn.com/dms/image/v2/D5635AQF0gv8e5YVacA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1736394263992?e=1748268000&v=beta&t=OJ11PpAKTE5Naps2z1wkjoFzqz-0QzT_vH1IkCkOpyA" 
+                  alt="Bharani Rayudu's profile" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </motion.div>
