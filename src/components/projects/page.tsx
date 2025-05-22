@@ -15,20 +15,20 @@ const projects = [
     demo: "https://prepflow.vercel.app"
   },
   {
+    title: "Songs downloader",
+    description: "A simple and efficient songs downloader",
+    tech: ["React", "Node.js" , "Express.js", "Yt-search npm"],
+    image: "/ytsongs.png",
+    github: "https://github.com/RayuduBharani/songs-download",
+    demo: "https://songs-download.vercel.app/"
+  },
+  {
     title: "Course Management System",
     description: "Comprehensive course management system for educators",
     tech: ["React", "MongoDB" , "Express.js" , "Node.js"],
     image: "/CMS.png",
     github: "https://github.com/RayuduBharani/Course_management_system",
     demo: "https://cms-bharani.vercel.app"
-  },
-  {
-    title: "Songs downloader",
-    description: "A simple and efficient songs downloader",
-    tech: ["React", "Node.js" , "Express.js", "Yt-search npm"],
-    image: "/ytsongs.png",
-    github: "https://github.com/RayuduBharani/YT_Songs_Download_Frontend",
-    demo: "https://yt-songs-download.vercel.app/"
   },
    {
     title: "Youtube review website",

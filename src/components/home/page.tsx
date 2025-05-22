@@ -125,7 +125,7 @@ export default function HomePage() {
             viewport={{ once: true }}
             className='flex gap-5 md:hidden'>
             <Button asChild variant="default">
-              <Link href="https://drive.google.com/file/d/1SlEIWPh4ayZFgCoaVHm45jigzBo2YaOi/view?usp=sharing">Resume</Link>
+              <Link href="https://drive.google.com/file/d/1W7jiEV7sWwga2pYvZ9IEygqAt0kuCBCL/view?usp=sharing">Resume</Link>
             </Button>
             <Button asChild variant="outline">
               <Link href="#projects">My Work</Link>
