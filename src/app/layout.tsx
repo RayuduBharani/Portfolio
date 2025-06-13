@@ -7,6 +7,22 @@ import Navbar from "@/components/navbar/navbar";
 export const metadata: Metadata = {
   title: "Portfolio Website",
   description: "A portfolio website showcasing my work and skills.",
+  openGraph: {
+    title: "Portfolio Website",
+    description: "A portfolio website showcasing my work and skills.",
+    url: "https://your-portfolio-url.com",
+    siteName: "Portfolio Website",
+    images: [
+      {
+        url: "https://rayudubharani.vercel.app/",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio Website OG Image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased w-full h-dvh`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           {children}
         </ThemeProvider>

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import LeetCodeIcon from '../icons/LeetCode'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { Button } from '../ui/button'
 
 export default function LeetcodePage({ leetcodeProfileInfo }: {
     leetcodeProfileInfo: {
@@ -48,14 +50,27 @@ export default function LeetcodePage({ leetcodeProfileInfo }: {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className='flex items-center gap-2 w-full justify-center pt-10 pb-3'
+                className='flex flex-col items-center gap-3 w-full justify-center pt-10 pb-3'
             >
-                <LeetCodeIcon className="w-4 h-4" />
-                <h3 className='text-md font-bold text-primary'>LeetCode Stats</h3>
+                <div className="flex items-center gap-2">
+                    <LeetCodeIcon className="w-5 h-5" />
+                    <h3 className='text-lg font-bold text-primary'>LeetCode Stats</h3>
+                </div>
+                <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="gap-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                    asChild
+                >
+                    <Link href="https://leetcode.com/rayudubharani/" target="_blank" prefetch={true}>
+                        <LeetCodeIcon className="w-4 h-4" />
+                        View Profile
+                    </Link>
+                </Button>
             </motion.div>
             <div className='w-full flex flex-col md:flex-row py-4 justify-center items-center gap-8' ref={containerRef}>
                 <motion.div 
-                    initial={{ opacity: 0, x: -50 }}
+                    initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -128,7 +143,7 @@ export default function LeetcodePage({ leetcodeProfileInfo }: {
                 </motion.div>
 
                 <motion.div 
-                    initial={{ opacity: 0, x: 50 }}
+                    initial={{ opacity: 0, x: 2 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}

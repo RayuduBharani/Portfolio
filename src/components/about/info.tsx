@@ -10,7 +10,7 @@ export default function AboutInfo({ leetcodeProfileInfo }: { leetcodeProfileInfo
   return (
     <div className="space-y-12">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -27,7 +27,7 @@ export default function AboutInfo({ leetcodeProfileInfo }: { leetcodeProfileInfo
       </motion.div>
       <div className="grid gap-12 md:grid-cols-2">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -76,11 +76,11 @@ export default function AboutInfo({ leetcodeProfileInfo }: { leetcodeProfileInfo
           </div>
         </motion.div>
       </div>
+      <Experience />
 
       <LeetcodePage leetcodeProfileInfo={leetcodeProfileInfo} />
 
 
-      <Experience />
     </div>
   )
 }

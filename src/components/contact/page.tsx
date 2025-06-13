@@ -78,6 +78,7 @@ export default function ContactPage() {
               rel="noopener noreferrer" 
               className="cursor-pointer"
               aria-label={social.name}
+              prefetch={true}
             >
               {social.icon}
             </Link>

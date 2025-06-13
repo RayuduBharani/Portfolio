@@ -85,7 +85,7 @@ export default function SkillsPage() {
         <p className="text-xl text-primary font-bold text-center relative inline-block
           after:content-[''] after:absolute after:left-1/2 after:bottom-0
           after:-translate-x-1/2 after:h-[3px] after:w-[65%] after:bg-foreground after:rounded-lg
-          after:transition-all after:duration-500 hover:after:w-full">Skills &amp; Tecnologies</p>
+          after:transition-all after:duration-500 hover:after:w-full">Skills &amp; Technologies</p>
         <p className='mt-1 text-sm text-center'>Showcasing My Expertise And Technical Proficiencies</p>
       </motion.div>
 

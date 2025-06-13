@@ -50,7 +50,7 @@ export default function Experience() {
                       </div>
                       <ul className="list-disc list-inside space-y-3 text-muted-foreground text-sm mt-3">
                         <li>Successfully completed a YouTube Review System project for Telugu TechPod, enabling PDF export, data visualization, and real-time user feedback
-                            <Link href="https://freelance-project-gules.vercel.app/" target="_blank" rel="noopener noreferrer" className='text-primary ml-3'>
+                            <Link href="https://freelance-project-gules.vercel.app/" target="_blank" rel="noopener noreferrer" className='text-primary ml-3' prefetch={true}>
                                 (Live Demo)
                             </Link>
                         </li>
