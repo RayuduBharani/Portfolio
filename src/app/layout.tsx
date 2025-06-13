@@ -5,7 +5,7 @@ import { Poppins } from "next/font/google";
 import Navbar from "@/components/navbar/navbar";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Portfolio Website",
   description: "A portfolio website showcasing my work and skills.",
 };
 const poppins = Poppins({

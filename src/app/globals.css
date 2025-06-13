@@ -135,3 +135,30 @@ html {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes stroke-hard {
+  0% {
+    stroke-dasharray: 0 283;
+  }
+  100% {
+    stroke-dasharray: var(--stroke-hard) 283;
+  }
+}
+
+@keyframes stroke-medium {
+  0% {
+    stroke-dasharray: 0 283;
+  }
+  100% {
+    stroke-dasharray: var(--stroke-medium) 283;
+  }
+}
+
+@keyframes stroke-easy {
+  0% {
+    stroke-dasharray: 0 283;
+  }
+  100% {
+    stroke-dasharray: var(--stroke-easy) 283;
+  }
+}

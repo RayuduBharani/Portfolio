@@ -1,4 +1,4 @@
-import AboutPage from "@/components/about/page";
+import { AboutPage } from "@/components/about/page";
 import ContactPage from "@/components/contact/page";
 import Footer from "@/components/footer/page";
 import HomePage from "@/components/home/page";
