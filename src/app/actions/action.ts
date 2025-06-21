@@ -58,6 +58,17 @@ export const LeetcodeProfileInfo = async (username: string) => {
             easy: user.submitStats.acSubmissionNum.find((d : { difficulty : string }) => d.difficulty === "Easy")?.count ?? 0,
             medium: user.submitStats.acSubmissionNum.find((d : { difficulty : string }) => d.difficulty === "Medium")?.count ?? 0,
             hard: user.submitStats.acSubmissionNum.find((d : { difficulty : string }) => d.difficulty === "Hard")?.count ?? 0,
-        }
+        },
+        rank : {
+            global: user.profile.ranking,
+            country: user.profile.countryRanking,
+            school: user.profile.schoolRanking,
+            rating: user.profile.starRating,
+        },
+        streak : {
+            current: user.profile.streak,
+            max: user.profile.maxStreak,
+        },
     };
 };
+

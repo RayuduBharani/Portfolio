@@ -33,7 +33,7 @@ export default function Navbar() {
                             ))}
                         </NavigationMenuItem>
                         <ModeToggle />
-                        <Button><Link href={"https://drive.google.com/file/d/1W7jiEV7sWwga2pYvZ9IEygqAt0kuCBCL/view?usp=sharing"} target='_blank'>Resume</Link></Button>
+                        <Button><Link href={"https://drive.google.com/file/d/1w3pUhI6jbNpfZfOZU5sijkLB8w5p01FI/view?usp=sharing"} target='_blank'>Resume</Link></Button>
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>

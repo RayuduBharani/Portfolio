@@ -79,7 +79,7 @@ export default function ProjectsPage() {
   }
 
   return (
-    <section className='w-full min-h-screen py-8 max-sm:px-4 pt-24'>
+    <section className='w-full py-8 max-sm:px-4 pt-24'>
       <div className='max-w-4xl mx-auto space-y-8'>
         <motion.div 
           initial={{ opacity: 0, y: -20 }}

@@ -74,7 +74,7 @@ export default function SkillsPage() {
   }
 
   return (
-    <div className='w-full h-full flex flex-col items-center justify-center gap-14 px-2'>
+    <div className='w-full h-fit flex flex-col items-center justify-center gap-14 px-2'>
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
