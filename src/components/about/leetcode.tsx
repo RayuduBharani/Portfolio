@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CheckCircle, Code, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function LeetCodeProgress({ leetcodeProfileInfo }: { leetcodeProfileInfo: LeetCodeProfile }) {
   const totals = {
@@ -68,10 +69,22 @@ export default function LeetCodeProgress({ leetcodeProfileInfo }: { leetcodeProf
       transition={{ duration: 0.7, ease: 'easeOut' }}
       className="w-full max-w-3xl mx-auto p-2 sm:p-4 rounded-lg bg-background text-foreground"
     >
-      <h2 className="text-xl sm:text-2xl font-bold mb-2 text-center">LeetCode Progress</h2>
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="text-lg text-primary sm:text-xl font-bold mb-2 text-center"
+      >
+        LeetCode Progress
+      </motion.h2>
 
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4">
-        <a
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mb-4"
+      >
+        <Link
           href={`https://leetcode.com/${leetcodeProfileInfo.username}/`}
           target="_blank"
           rel="noopener noreferrer"
@@ -79,18 +92,23 @@ export default function LeetCodeProgress({ leetcodeProfileInfo }: { leetcodeProf
         >
           <Code className="w-4 h-4" />
           {leetcodeProfileInfo.username}
-        </a>
+        </Link>
         <span className="text-muted-foreground text-xs sm:text-sm">
           Rank: <span className="font-medium">{leetcodeProfileInfo.ranking ?? '-'}</span>
         </span>
         <span className="text-muted-foreground text-xs sm:text-sm">
           Country: India
         </span>
-      </div>
+      </motion.div>
 
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-6" ref={containerRef}>
-        {/* Circular Progress */}
-        <div className="relative flex-shrink-0 mb-4 lg:mb-0">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="relative flex-shrink-0 mb-4 lg:mb-0"
+        >
+          {/* Circular Progress */}
           <div className="w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 relative mx-auto">
             <svg className="w-full h-full transform -rotate-90" viewBox="0 0 200 200">
               <circle
@@ -157,10 +175,15 @@ export default function LeetCodeProgress({ leetcodeProfileInfo }: { leetcodeProf
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Stats Cards */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
+        <motion.div 
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto"
+        >
+          {/* Stats Cards */}
           {/* Easy Card */}
           <div
             className="bg-gray-800 rounded-lg p-3 sm:p-4 min-w-0 flex-1 sm:min-w-[120px] md:min-w-[160px] transform transition-all duration-300 hover:scale-105"
@@ -238,18 +261,22 @@ export default function LeetCodeProgress({ leetcodeProfileInfo }: { leetcodeProf
               {hardProgress.toFixed(1)}%
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Footer */}
-      <div className="mt-4 sm:mt-6 text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="mt-4 sm:mt-6 text-center"
+      >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-muted rounded-lg border border-border">
           <Trophy className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500" />
           <span className="text-xs sm:text-sm text-muted-foreground">
             {totalProgress.toFixed(1)}% solved
           </span>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

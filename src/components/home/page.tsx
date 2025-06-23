@@ -68,7 +68,7 @@ export default function HomePage() {
           "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
         )}
       />
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,black)] dark:bg-black"></div>
       {/* Radial gradient for the container to give a faded look */}
       <div className='backdrop-blur-[1px] w-full h-full bg-white/10 dark:bg-black/10 rounded-2xl flex items-center justify-center'>
         <div className=' flex flex-col items-center justify-center gap-5 max-sm:px-0.5'>

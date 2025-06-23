@@ -76,7 +76,7 @@ export default function AboutInfo({ leetcodeProfileInfo }: { leetcodeProfileInfo
           </div>
         </motion.div>
       </div>
-      <Experience />
+      <Experience /> 
 
       <LeetcodePage leetcodeProfileInfo={leetcodeProfileInfo} />
 
