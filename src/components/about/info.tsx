@@ -1,86 +1,99 @@
 "use client"
 
 import React from 'react'
-import { motion } from "framer-motion"
 import Image from "next/image"
-import Experience from './Experience'
 import LeetcodePage from './leetcode'
+import { motion } from "framer-motion"
 
-export default function AboutInfo({ leetcodeProfileInfo }: { leetcodeProfileInfo: LeetCodeProfile }) {
+export default function AboutInfo({ 
+  leetcodeProfileInfo, 
+  recentSubmissions 
+}: { 
+  leetcodeProfileInfo: LeetCodeProfile,
+  recentSubmissions: Array<{
+    title: string;
+    titleSlug: string;
+    time: string;
+    status: string;
+    language: string;
+  }>
+}) {
   return (
-    <div className="space-y-12">
+    <div className="max-w-7xl mx-auto space-y-8 md:space-y-12 lg:space-y-16 py-4 px-4 sm:px-6 md:py-8">
+      {/* Header */}
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-center space-y-2"
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className='space-y-2 flex flex-col items-center'
       >
-        <h1 className="text-xl font-bold text-primary 
-          relative inline-block
-          after:content-[''] after:absolute after:left-1/2 after:bottom-0
+        <p className='text-lg sm:text-xl md:text-[1.3rem] font-bold text-primary text-center relative inline-block
+          after:content-[""] after:absolute after:left-1/2 after:bottom-0
           after:-translate-x-1/2 after:h-[3px] after:w-[50%] after:bg-foreground after:rounded-lg
-          after:transition-all after:duration-500 hover:after:w-full">About Me</h1>
-        <p className="text-muted-foreground text-md">
-          Turning Ideas into Digital Reality
-        </p>
-      </motion.div>
-      <div className="grid gap-12 md:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-6 h-fit"
-        >
-          <div className="rounded-full bg-muted overflow-hidden shadow-lg mx-auto w-[16rem] sm:w-[18rem] md:w-[20rem] lg:w-[22rem]">
-            <div className="aspect-square w-full bg-gradient-to-br from-primary/20 to-primary/5">
-              <Image
-                width={200}
-                height={200}
-                src="/img.jpeg"
-                alt="Bharani Rayudu's profile"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          after:transition-all after:duration-500 hover:after:w-full'>About Me</p>        </motion.div>
 
+      {/* Main Content */}
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-lg overflow-hidden flex-shrink-0"
+        >
+          <Image
+            width={256}
+            height={256}
+            src="/img.jpeg"
+            alt="Bharani Rayudu"
+            className="w-full h-full rounded-full object-cover"
+          />
         </motion.div>
 
+        {/* About Text */}
         <motion.div
-          initial={{ opacity: 0, x: 10 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="space-y-4"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          className="w-full"
         >
-          <div className="prose prose-gray dark:prose-invert">
-            <h2 className="text-xl font-semibold mb-4 max-sm:text-center max-md:text-center">👋 Hi, I&apos;m Bharani Rayudu</h2>
-            <p className="text-md text-muted-foreground max-sm:text-center max-md:text-center">
-              A passionate Full-Stack Developer from Andhra Pradesh, currently pursuing B.Tech
-              in Computer Science & Data Science at KIET. I specialize in building modern,
-              scalable web applications that make a difference.
-            </p>
-            <p className="text-md text-muted-foreground mt-4 max-sm:text-center max-md:text-center">
-              My journey began in my first year of college, inspired by my friends like Ashok and
-              Guru Brahmam. From simple pages to full-stack applications, every project has been
-              a stepping stone in my growth.
-            </p>
-          </div>
-
-          <div className="border-l-4 border-primary/50 pl-4">
-            <p className="text-lg italic font-semibold text-muted-foreground">
-              &ldquo;Success doesn&apos;t come from where you start — it comes from never giving up...&rdquo;
-            </p>
-            <p className="text-sm text-primary mt-2">– Bharani Rayudu</p>
+          <h2 className="text-lg sm:text-xl font-semibold mb-3 md:mb-4 text-center md:text-left">Hello, I&apos;m Bharani Rayudu</h2>
+          <div className="space-y-3 md:space-y-4 text-muted-foreground text-sm sm:text-base text-center md:text-left">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              Full-Stack Web Developer from Andhra Pradesh with a passion for building scalable and efficient web applications. Currently pursuing B.Tech in Computer Science & Data Science at KIET.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              I focus on creating solutions that make a real difference, constantly learning and improving my craft through diverse projects—from responsive websites to complex full-stack applications.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-xs sm:text-sm italic opacity-80 pt-2"
+            >
+              &quot;Code with passion, learn with purpose, and build a future that inspires.&quot; - Bharani
+            </motion.p>
           </div>
         </motion.div>
       </div>
-      <Experience /> 
-
-      <LeetcodePage leetcodeProfileInfo={leetcodeProfileInfo} />
 
 
+      {/* LeetCode Section */}
+      <LeetcodePage leetcodeProfileInfo={leetcodeProfileInfo} recentSubmissions={recentSubmissions} />
     </div>
   )
 }
