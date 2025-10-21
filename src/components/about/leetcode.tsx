@@ -86,7 +86,7 @@ export default function LeetCodeProgress({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="w-full max-w-8xl mx-auto p-4 rounded-xl"
+      className="w-full max-w-8xl mx-auto sm:p-4 rounded-xl"
       ref={containerRef}
     >
       {/* Header */}
@@ -304,13 +304,13 @@ export default function LeetCodeProgress({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-lg p-4 border bg-card"
+          className="rounded-lg p-4 border bg-card lg:w-[320px]"
         >
           <h3 className="text-base font-bold text-foreground mb-1">
             Recent Submissions <span className="text-muted-foreground text-xs font-normal">(10 latest)</span>
           </h3>
           
-          <ScrollArea className="h-[400px] mt-4 pr-4">
+          <ScrollArea className="h-[260px] mt-4 pr-4">
             <div className="space-y-3">
               {recentSubmissions.length > 0 ? recentSubmissions.map((submission, index) => {
                 const isAccepted = submission.status === 'Accepted';
@@ -324,7 +324,7 @@ export default function LeetCodeProgress({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-                    className="border-l-2 border-border pl-3 py-1"
+                    className="border-l-2 border-border pl-3 py-1 bg-secondary/50 rounded hover:bg-accent/50 transition-colors cursor-pointer"
                   >
                     <div className="text-sm font-medium text-foreground mb-1.5 line-clamp-2">{submission.title}</div>
                     <div className="flex items-center gap-2 flex-wrap">
