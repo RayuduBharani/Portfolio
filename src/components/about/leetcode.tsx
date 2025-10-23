@@ -81,7 +81,7 @@ export default function LeetCodeProgress({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="w-full max-w-8xl mx-auto sm:p-4 rounded-xl overflow-hidden"
+      className="w-full max-w-7xl mx-auto p-4 rounded-xl"
       ref={containerRef}
     >
       {/* Header */}
@@ -98,14 +98,14 @@ export default function LeetCodeProgress({
         <h2 className="text-xl font-bold text-foreground">LeetCode Statistics</h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
         {/* Left Column - Profile */}
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="space-y-4 overflow-hidden"
+          className="space-y-4"
         >
           {/* Profile Link */}
           <Link
@@ -206,7 +206,7 @@ export default function LeetCodeProgress({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-3 overflow-hidden"
+          className="space-y-3"
         >
           {/* Easy Card */}
           <motion.div
@@ -299,7 +299,7 @@ export default function LeetCodeProgress({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-lg p-4 border bg-card lg:w-[320px] overflow-hidden"
+          className="rounded-lg p-4 border bg-card md:col-span-2 lg:col-span-1"
         >
           <h3 className="text-base font-bold text-foreground mb-1">
             Recent Submissions <span className="text-muted-foreground text-xs font-normal">(10 latest)</span>
