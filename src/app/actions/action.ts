@@ -9,6 +9,7 @@ export const LeetcodeProfileInfo = async (username: string) => {
           acSubmissionNum {
             difficulty
             count
+            submissions
           }
         }
         profile {
@@ -16,6 +17,10 @@ export const LeetcodeProfileInfo = async (username: string) => {
           reputation
           starRating
         }
+      }
+      allQuestionsCount {
+        difficulty
+        count
       }
     }
   `;
@@ -39,6 +44,12 @@ export const LeetcodeProfileInfo = async (username: string) => {
     }
 
     const user = json.data.matchedUser;
+    const allQuestions = json.data.allQuestionsCount;
+
+    const allSubmissions = user.submitStats.acSubmissionNum.find((d: { difficulty: string; }) => d.difficulty === "All");
+    const totalSolved = allSubmissions?.count ?? 0;
+    const totalSubmissions = allSubmissions?.submissions ?? 0;
+    const successRate = totalSubmissions > 0 ? ((totalSolved / totalSubmissions) * 100).toFixed(1) : "0.0";
 
     return {
         username: user.username,
@@ -54,11 +65,20 @@ export const LeetcodeProfileInfo = async (username: string) => {
         twitter: user.profile.twitterUrl,
         about: user.profile.aboutMe,
         solved: {
-            all: user.submitStats.acSubmissionNum.find((d: { difficulty: string; }) => d.difficulty === "All")?.count ?? 0,
+            all: totalSolved,
             easy: user.submitStats.acSubmissionNum.find((d : { difficulty : string }) => d.difficulty === "Easy")?.count ?? 0,
             medium: user.submitStats.acSubmissionNum.find((d : { difficulty : string }) => d.difficulty === "Medium")?.count ?? 0,
             hard: user.submitStats.acSubmissionNum.find((d : { difficulty : string }) => d.difficulty === "Hard")?.count ?? 0,
         },
+        totals: {
+            all: allQuestions.find((d: { difficulty: string; }) => d.difficulty === "All")?.count ?? 0,
+            easy: allQuestions.find((d: { difficulty: string; }) => d.difficulty === "Easy")?.count ?? 0,
+            medium: allQuestions.find((d: { difficulty: string; }) => d.difficulty === "Medium")?.count ?? 0,
+            hard: allQuestions.find((d: { difficulty: string; }) => d.difficulty === "Hard")?.count ?? 0,
+        },
+        submissions: totalSubmissions,
+        successRate: parseFloat(successRate),
+        percentageRank: user.profile.ranking > 0 ? Math.round((1 - user.profile.ranking / 1000000) * 100) : 0,
         rank : {
             global: user.profile.ranking,
             country: user.profile.countryRanking,

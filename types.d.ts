@@ -18,4 +18,13 @@ interface LeetCodeProfile {
     medium: number;
     hard: number;
   };
+  totals: {
+    all: number;
+    easy: number;
+    medium: number;
+    hard: number;
+  };
+  submissions: number;
+  successRate: number;
+  percentageRank: number;
 }

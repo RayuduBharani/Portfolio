@@ -7,6 +7,9 @@ import Navbar from "@/components/navbar/navbar";
 export const metadata: Metadata = {
   title: "Portfolio Website",
   description: "A portfolio website showcasing my work and skills.",
+  verification: {
+    google: "ihoz1zUg40vn3eEUAVe9NYCopYvdRTUjlJWljX9U8rM",
+  },
   openGraph: {
     title: "Portfolio Website",
     description: "A portfolio website showcasing my work and skills.",
@@ -36,9 +39,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
       <body
-        className={`${poppins.variable} antialiased w-full h-dvh`}
+        className={`${poppins.variable} antialiased w-full h-dvh overflow-x-hidden`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />

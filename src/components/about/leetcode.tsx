@@ -17,20 +17,15 @@ export default function LeetCodeProgress({
     language: string;
   }>
 }) {
-  const totals = {
-    all: 3721,
-    easy: 908,
-    medium: 1936,
-    hard: 877,
-  };
+  // Use dynamic data from leetcodeProfileInfo
+  const totals = leetcodeProfileInfo.totals;
+  const submissions = leetcodeProfileInfo.submissions;
+  const successRate = leetcodeProfileInfo.successRate;
+  const percentageRank = leetcodeProfileInfo.percentageRank;
 
   const easyProgress = (leetcodeProfileInfo.solved.easy / totals.easy) * 100;
   const mediumProgress = (leetcodeProfileInfo.solved.medium / totals.medium) * 100;
   const hardProgress = (leetcodeProfileInfo.solved.hard / totals.hard) * 100;
-
-  const submissions = 480;
-  const successRate = 73.1;
-  const percentageRank = 9;
 
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -86,7 +81,7 @@ export default function LeetCodeProgress({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.7, ease: 'easeOut' }}
-      className="w-full max-w-8xl mx-auto sm:p-4 rounded-xl"
+      className="w-full max-w-8xl mx-auto sm:p-4 rounded-xl overflow-hidden"
       ref={containerRef}
     >
       {/* Header */}
@@ -110,7 +105,7 @@ export default function LeetCodeProgress({
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="space-y-4"
+          className="space-y-4 overflow-hidden"
         >
           {/* Profile Link */}
           <Link
@@ -211,11 +206,11 @@ export default function LeetCodeProgress({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="space-y-3"
+          className="space-y-3 overflow-hidden"
         >
           {/* Easy Card */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -243,7 +238,7 @@ export default function LeetCodeProgress({
 
           {/* Medium Card */}
           <motion.div
-            initial={{ opacity: 0, x: -10 }}
+            initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -271,7 +266,7 @@ export default function LeetCodeProgress({
 
           {/* Hard Card */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -300,11 +295,11 @@ export default function LeetCodeProgress({
 
         {/* Right Column - Recent Submissions */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 0 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-lg p-4 border bg-card lg:w-[320px]"
+          className="rounded-lg p-4 border bg-card lg:w-[320px] overflow-hidden"
         >
           <h3 className="text-base font-bold text-foreground mb-1">
             Recent Submissions <span className="text-muted-foreground text-xs font-normal">(10 latest)</span>
