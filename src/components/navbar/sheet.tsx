@@ -50,7 +50,7 @@ export default function MobileNav() {
                                     </NavigationMenuLink>
                                 ))}
                                 <Button asChild className='mb-5'>
-                                    <Link href="https://drive.google.com/file/d/1c0U2zv47XoyFRlyxucCWH4kaW85_gCSQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</Link>
+                                    <Link href="https://drive.google.com/file/d/1VKlH9BHpncDNt8_mAfuIrrlsjxQaxG4d/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</Link>
                                 </Button>
                             </NavigationMenuItem>
                         </NavigationMenuList>

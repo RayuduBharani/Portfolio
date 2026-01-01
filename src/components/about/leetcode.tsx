@@ -21,7 +21,6 @@ export default function LeetCodeProgress({
   const totals = leetcodeProfileInfo.totals;
   const submissions = leetcodeProfileInfo.submissions;
   const successRate = leetcodeProfileInfo.successRate;
-  const percentageRank = leetcodeProfileInfo.percentageRank;
 
   const easyProgress = (leetcodeProfileInfo.solved.easy / totals.easy) * 100;
   const mediumProgress = (leetcodeProfileInfo.solved.medium / totals.medium) * 100;
@@ -176,7 +175,7 @@ export default function LeetCodeProgress({
             {/* Center content */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-3xl font-bold text-foreground mb-1">{percentageRank}%</div>
+                <div className="text-3xl font-bold text-foreground mb-1">{((totalSolved / totals.all) * 100).toFixed(1)}%</div>
               </div>
             </div>
           </div>
@@ -185,7 +184,7 @@ export default function LeetCodeProgress({
           <div className="space-y-2">
             <div className="text-center">
               <div className="text-4xl font-bold text-primary mb-1">{totalSolved}</div>
-              <div className="text-xs text-muted-foreground">of {totals.all} solved</div>
+              <div className="text-xs text-muted-foreground">of {totals.all} total</div>
             </div>
             
             <div className="flex justify-between items-center text-sm">
@@ -232,7 +231,7 @@ export default function LeetCodeProgress({
             </div>
             <div className="flex justify-between text-xs text-muted-foreground">
               <span>{easyProgress.toFixed(1)}% solved</span>
-              <span>{((leetcodeProfileInfo.solved.easy / totalSolved) * 100).toFixed(1)}% accepted</span>
+              <span>{((leetcodeProfileInfo.solved.easy / totalSolved) * 100).toFixed(1)}% of total</span>
             </div>
           </motion.div>
 
@@ -260,7 +259,7 @@ export default function LeetCodeProgress({
             </div>
             <div className="flex justify-between text-xs text-muted-foreground">
               <span>{mediumProgress.toFixed(1)}% solved</span>
-              <span>{((leetcodeProfileInfo.solved.medium / totalSolved) * 100).toFixed(1)}% accepted</span>
+              <span>{((leetcodeProfileInfo.solved.medium / totalSolved) * 100).toFixed(1)}% of total</span>
             </div>
           </motion.div>
 
@@ -288,7 +287,7 @@ export default function LeetCodeProgress({
             </div>
             <div className="flex justify-between text-xs text-muted-foreground">
               <span>{hardProgress.toFixed(1)}% solved</span>
-              <span>{hardProgress.toFixed(1)}% accepted</span>
+              <span>{((leetcodeProfileInfo.solved.hard / totalSolved) * 100).toFixed(1)}% of total</span>
             </div>
           </motion.div>
         </motion.div>

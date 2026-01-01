@@ -35,7 +35,7 @@ export default function ContactPage() {
     {
       name: "WhatsApp",
       icon: <Whatsapp />,
-      href: "https://wa.me/7075923575"
+      href: "https://wa.me/1234567890"
     }
   ]
 
